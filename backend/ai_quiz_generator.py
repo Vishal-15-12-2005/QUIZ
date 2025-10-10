@@ -2,7 +2,7 @@ import os
 import google.generativeai as genai
 import json
 
-genai.configure(api_key="AIzaSyC4KK1jopsPro4UBdHSP3Xai_YzwjPWf2w")
+genai.configure(api_key="ENTER YOUR API")
 
 def generate_quiz_from_content(
     content: str,
