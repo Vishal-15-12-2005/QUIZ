@@ -1,0 +1,223 @@
+/* --- General Container & Typography --- */
+.profile-container {
+  background-color: #ffffff;
+  padding: clamp(2rem, 5vw, 3rem); /* Responsive padding */
+  border-radius: 16px; /* Slightly larger radius */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); /* Softer, modern shadow */
+  border: 1px solid #e0e0e0; /* Subtle border for definition */
+  max-width: 850px;
+  width: 95%; /* More flexible width */
+  box-sizing: border-box;
+  animation: fadeIn 0.8s ease-in-out;
+  margin: 50px auto; /* Center container horizontally */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-container h2 {
+  font-size: clamp(2rem, 6vw, 2.5rem); /* Responsive font size */
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0; /* Underline for main title */
+}
+
+.profile-container h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* --- User Header Card --- */
+.profile-header-card {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(110, 142, 251, 0.3);
+  margin-bottom: 2.5rem;
+}
+
+.user-info {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.user-info h3 {
+  margin: 0 0 0.25rem 0; /* Adjusted margin */
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stats-overview {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-item .label {
+  font-size: 0.9rem;
+  text-transform: uppercase; /* Adds a bit of style */
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Quiz History Timeline --- */
+.quiz-history-list {
+  list-style: none;
+  padding-left: 1.75rem;
+  position: relative;
+  border-left: 3px solid #e0e0e0;
+}
+
+.history-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-item:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* The dot on the timeline */
+.history-item::before {
+  content: '';
+  position: absolute;
+  left: -32.5px; /* (dot width + border) / 2 + timeline padding */
+  top: 18px; /* Vertically align with the title */
+  width: 15px;
+  height: 15px;
+  background-color: #6e8efb;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #6e8efb; /* Outer glow for the dot */
+}
+
+/* --- History Item Content --- */
+.history-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-title {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.score-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 50px; /* Pill shape */
+  color: white;
+  font-weight: 600;
+  background-color: #a777e3;
+  font-size: 0.9em;
+  flex-shrink: 0; /* Prevents badge from shrinking */
+}
+
+.score-badge.high-score {
+  background-color: #28a745;
+}
+
+.history-item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 0.75rem;
+}
+
+.quiz-details,
+.quiz-date {
+  margin: 0;
+  color: #888;
+}
+
+.back-link-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1.5rem;
+    width: 100%;
+    border: none; /* Remove border for edge-to-edge look */
+  }
+
+  .profile-header-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .user-info {
+    text-align: center;
+  }
+
+  .stats-overview {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .history-item-header, .history-item-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .quiz-history-list {
+    padding-left: 1.5rem;
+  }
+
+  .history-item::before {
+    left: -29.5px;
+  }
+}

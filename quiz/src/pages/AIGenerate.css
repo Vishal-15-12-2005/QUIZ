@@ -1,0 +1,194 @@
+/* General Page Container */
+.create-quiz-page-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Header */
+.create-quiz-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+}
+
+
+/* Content Sections */
+.create-quiz-content {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.quiz-details-section,
+.question-section {
+  background-color: #fafafa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.quiz-details-section h3,
+.question-section h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #34495e;
+  font-size: 1.4em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Form Elements (Inputs, Labels, Textareas) */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box; /* Important for padding and width */
+  font-size: 1em;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.quiz-details-section > div {
+  margin-bottom: 20px;
+}
+
+/* Message Styles */
+.message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Buttons */
+.add-question-button,
+.create-quiz-submit-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.add-question-button:hover,
+.create-quiz-submit-button:hover {
+  background: linear-gradient(90deg, #2980b9, #3498db);
+  transform: translateY(-2px);
+}
+
+.add-question-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Generated Questions Section */
+.question-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.question-header h4 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.2em;
+}
+
+.question-content-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Make layout two-column on wider screens */
+@media (min-width: 768px) {
+  .question-content-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.options-input-group p {
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.option-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option-input label {
+  flex-basis: 90px; /* Allocate fixed space for "Option A:" */
+  margin-bottom: 0;
+}
+
+.options-input-group label[for^="correct-answer"] {
+  margin-top: 10px;
+}
+
+.options-input-group input[type="text"]#correct-answer {
+  width: 50px; /* Smaller width for single-character input */
+  text-align: center;
+  text-transform: uppercase;
+}

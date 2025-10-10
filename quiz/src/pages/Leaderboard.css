@@ -1,0 +1,206 @@
+/* Leaderboard Page Specific Styles */
+.leaderboard-container {
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
+  width: 90%;
+  box-sizing: border-box;
+  animation: fadeIn 1s ease-out;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.leaderboard-container h2 {
+  font-size: 2.8em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.leaderboard-container p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa; /* Light background for items */
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaderboard-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.leaderboard-item .rank {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #6c757d; /* Gray for rank */
+  margin-right: 20px;
+  min-width: 40px; /* Ensure consistent width for rank */
+  text-align: center;
+}
+
+.leaderboard-item .username {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #34495e;
+  flex-grow: 1; /* Take up remaining space */
+  text-align: left;
+}
+
+.leaderboard-item .score {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #28a745; /* Green for score */
+  margin-left: 20px;
+}
+
+/* Top 3 specific styles (re-added for context, but not used in current HTML) */
+.leaderboard-item.top-1 {
+  background: linear-gradient(45deg, #ffd700 0%, #ffa500 100%); /* Gold gradient */
+  color: #333;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+.leaderboard-item.top-1 .rank,
+.leaderboard-item.top-1 .username,
+.leaderboard-item.top-1 .score {
+  color: #333; /* Dark text for gold background */
+}
+
+.leaderboard-item.top-2 {
+  background: linear-gradient(45deg, #c0c0c0 0%, #a9a9a9 100%); /* Silver gradient */
+  color: #333;
+  box-shadow: 0 8px 20px rgba(192, 192, 192, 0.4);
+}
+
+.leaderboard-item.top-2 .rank,
+.leaderboard-item.top-2 .username,
+.leaderboard-item.top-2 .score {
+  color: #333;
+}
+
+.leaderboard-item.top-3 {
+  background: linear-gradient(45deg, #cd7f32 0%, #b87333 100%); /* Bronze gradient */
+  color: white;
+  box-shadow: 0 8px 20px rgba(205, 127, 50, 0.4);
+}
+
+/* Current User Rank Section */
+.current-user-rank-section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  width: 100%;
+}
+
+.current-user-rank-section h3 {
+  font-size: 1.8em;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.current-user-rank-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Blue-purple gradient */
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.current-user-rank-card .rank {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.current-user-rank-card .username {
+  font-size: 1.5em;
+  font-weight: 600;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.current-user-rank-card .score {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/* Button Link Style */
+.button-link {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(45deg, #007bff 0%, #0056b3 100%); /* Blue gradient */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+}
+
+.button-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .leaderboard-container {
+    padding: 30px 20px;
+  }
+
+  .leaderboard-container h2 {
+    font-size: 2.2em;
+  }
+
+  .leaderboard-item {
+    padding: 10px 15px;
+  }
+
+  .leaderboard-item .rank {
+    font-size: 1.5em;
+    margin-right: 10px;
+  }
+
+  .leaderboard-item .username,
+  .leaderboard-item .score {
+    font-size: 1.2em;
+  }
+
+  .current-user-rank-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .current-user-rank-card .rank,
+  .current-user-rank-card .username,
+  .current-user-rank-card .score {
+    font-size: 1.2em;
+  }
+}

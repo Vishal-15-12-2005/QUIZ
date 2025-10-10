@@ -1,0 +1,230 @@
+/* Styling for Admin page, matching App.css */
+.admin-container {
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); /* Soft gradient background from App.css */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Space between main sections */
+    color: #333; /* Dark gray text for readability */
+}
+
+.admin-header {
+    color: #2c3e50; /* Dark blue-gray for heading from App.css */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.admin-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px; /* Consistent border-radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.admin-nav-button {
+    background-color: #f0f4f8; /* Light background */
+    color: #34495e; /* Dark text */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px; /* Consistent border-radius */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Smooth transitions */
+    text-decoration: none;
+    display: inline-block;
+}
+
+.admin-nav-button:hover {
+    background-color: #e0e6eb;
+    color: #2c3e50;
+}
+
+.admin-nav-button.active {
+    background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Blue-purple gradient from App.css */
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Button shadow from App.css */
+}
+
+.admin-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for cards */
+    gap: 25px; /* Space between grid items */
+    align-items: start; /* Align items to the start of their grid area */
+}
+
+.admin-card {
+    background-color: #ffffff;
+    border-radius: 15px; /* More rounded corners from App.css */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow from App.css */
+    padding: 40px 50px; /* Increased padding from form-container */
+    min-height: 300px; /* Added min-height for consistent size */
+    /* margin-bottom removed as gap handles spacing in grid */
+    flex: 1; /* Still useful if not in a grid, or for internal flex */
+}
+
+.admin-card-title {
+    color: #2c3e50; /* Dark blue-gray for heading from App.css */
+    font-size: 2.5em; /* Larger heading from form-container */
+    margin-bottom: 30px; /* More space below title */
+    border-bottom: 3px solid #2575fc; /* Blue border from App.css */
+    padding-bottom: 12px;
+    font-weight: 600;
+}
+
+.admin-form-group {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+.admin-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600; /* Bolder label from form-container */
+    color: #444; /* Slightly darker label color */
+}
+
+.admin-form-group input[type="text"],
+.admin-form-group textarea,
+.admin-form-group select {
+    width: 100%; /* Full width */
+    padding: 12px; /* Larger padding */
+    border: 1px solid #ccc; /* Consistent border */
+    border-radius: 8px; /* Consistent border-radius */
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transitions from App.css */
+}
+
+.admin-form-group input[type="text"]:focus,
+.admin-form-group textarea:focus,
+.admin-form-group select:focus {
+    border-color: #2575fc; /* Highlight on focus from App.css */
+    box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2); /* Soft glow on focus from App.css */
+    outline: none;
+}
+
+.admin-form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.admin-button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: center; /* Center buttons */
+}
+
+.admin-button {
+    background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Blue-purple gradient from App.css */
+    color: white;
+    padding: 10px 18px; /* Reduced padding for smaller buttons */
+    border: none;
+    border-radius: 8px; /* Consistent border-radius */
+    font-size: 1em; /* Reduced font size */
+    font-weight: 600; /* Bolder text */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Slightly smaller shadow */
+}
+
+.admin-button:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+    opacity: 0.9;
+}
+
+.admin-button:active {
+    transform: translateY(0);
+}
+
+.admin-button.delete {
+    background: linear-gradient(45deg, #e74c3c 0%, #c0392b 100%); /* Red gradient for delete */
+}
+
+.admin-button.delete:hover {
+    background: linear-gradient(45deg, #c0392b 0%, #a52a2a 100%);
+}
+
+.admin-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.admin-list-item {
+    background-color: #f9f9f9; /* Light background for list items */
+    border: 1px solid #eee; /* Subtle border */
+    border-radius: 8px; /* Consistent border-radius */
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap;
+    gap: 15px; /* Increased gap for better spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transitions */
+}
+
+.admin-list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-list-item strong {
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.admin-list-item div {
+    flex-grow: 1;
+}
+
+.admin-list-item .admin-button-group {
+    margin-top: 0; /* Remove top margin if inside list item */
+}
+
+.admin-list-item select.admin-form-group {
+    width: auto; /* Allow select to size based on content */
+    min-width: 150px; /* Increased minimum width for better visibility */
+    padding: 10px 15px; /* Adjust padding for select */
+    font-size: 1em; /* Standard font size for select */
+    appearance: none; /* Remove default browser styling */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C197.3L159.3%2C69.7c-3.2-3.2-8.4-3.2-11.6%2C0L5.4%2C197.3c-3.2%2C3.2-3.2%2C8.4%2C0%2C11.6l11.6%2C11.6c3.2%2C3.2%2C8.4%2C3.2%2C11.6%2C0l120.7-120.7c3.2-3.2%2C8.4-3.2%2C11.6%2C0l120.7%2C120.7c3.2%2C3.2%2C8.4%2C3.2%2C11.6%2C0l11.6-11.6C290.2%2C205.7%2C290.2%2C200.5%2C287%2C197.3z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    border-radius: 8px; /* Consistent border-radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message.error {
+    background-color: #ffe0e0; /* Error background from App.css */
+    color: #d32f2f; /* Error text from App.css */
+    border: 1px solid #d32f2f;
+}
+
+.message.success {
+    background-color: #e0ffe0; /* Success background from App.css */
+    color: #388e3c; /* Success text from App.css */
+    border: 1px solid #388e3c;
+}
