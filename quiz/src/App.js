@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Import components from the new pages directory
@@ -19,19 +19,21 @@ import ProtectedRoute from './components/ProtectedRoute';
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/quiz/category/:categoryName" element={<Quiz />} /> {/* Corrected route */}
-        <Route path="/results/:id" element={<Results />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']}><Admin /></ProtectedRoute>} />
-        <Route path="/create-quiz" element={<CreateQuiz />} />
-        <Route path="/generate-quiz-ai" element={<AIGenerateQuiz />} />
-      </Routes>
+      <BrowserRouter basename="/QUIZ">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/quiz/category/:categoryName" element={<Quiz />} /> {/* Corrected route */}
+          <Route path="/results/:id" element={<Results />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/admin" element={<ProtectedRoute allowedRoles={['admin']}><Admin /></ProtectedRoute>} />
+          <Route path="/create-quiz" element={<CreateQuiz />} />
+          <Route path="/generate-quiz-ai" element={<AIGenerateQuiz />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

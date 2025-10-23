@@ -17,6 +17,34 @@ The React frontend is configured for GitHub Pages deployment. To deploy or updat
    ```
 3. This will automatically build the app and push the static files to the `gh-pages` branch
 
+### GitHub Pages Configuration
+
+After deployment, you need to enable GitHub Pages in your repository settings:
+
+1. Go to your GitHub repository: https://github.com/Vishal-15-12-2005/QUIZ
+2. Click on the "Settings" tab
+3. Scroll down to the "Pages" section
+4. Under "Source", select "Deploy from a branch"
+5. Select "gh-pages" as the branch and "/ (root)" as the folder
+6. Click "Save"
+7. Wait a few minutes for GitHub Pages to build and deploy your site
+
+Your site will be available at: https://vishal-15-12-2005.github.io/QUIZ
+
+### Troubleshooting GitHub Pages Display Issues
+
+If the page loads but content doesn't show:
+
+1. Check that GitHub Pages is enabled in your repository settings
+2. Verify your `homepage` field in `quiz/package.json` is set to `"https://vishal-15-12-2005.github.io/QUIZ"`
+3. Ensure your React Router is configured for a subdirectory (the `/QUIZ/` path) - this has been fixed in the latest deployment
+4. The included `404.html` file should help with routing issues
+5. Wait a few minutes after deployment for GitHub Pages to fully update
+6. Clear your browser cache or try opening in an incognito/private window
+7. Make sure there's only one BrowserRouter in your app (fixed - removed duplicate in index.js)
+
+If you're still experiencing issues, please check the browser's developer console for any error messages.
+
 ## Backend Deployment
 
 The backend is a Flask application that requires:
